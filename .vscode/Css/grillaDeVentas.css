@@ -1,8 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: lightcoral;
     margin: 0;
     padding: 20px;
+    font-size: medium;
 }
 
 h2 {
@@ -27,4 +28,37 @@ th {
 
 tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 600px){
+
+    body{
+        font-size: large;
+    }
+
+    table, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th, td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    th::before, td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+    
 }

@@ -3,6 +3,7 @@ body {
     background-color: #fce4ec;
     margin: 0;
     padding: 20px;
+    font-size: medium;
 }
 
 form {
@@ -19,7 +20,7 @@ label {
 }
 
 input {
-    width: 100%;
+    width: 98%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -37,4 +38,12 @@ button {
 
 button:hover {
     background-color: #880e4f;
+}
+
+@media screen and (max-width: 600px){
+
+    body{
+        font-size: large;
+    }
+    
 }

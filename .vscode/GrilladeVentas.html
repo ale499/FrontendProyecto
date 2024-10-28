@@ -8,6 +8,7 @@
 </head>
 <body>
 <h2>Ventas Registradas</h2>
+<div class="table-container">
 <table id="ventasTable">
     <thead>
         <tr>
@@ -21,7 +22,7 @@
         <!-- Los datos se insertarán aquí dinámicamente -->
     </tbody>
 </table>
-
+</div>
 <script>
     fetch('/ventas/listar')
         .then(response => response.json())
@@ -39,3 +40,4 @@
             });
         });
 </script>
+</body>

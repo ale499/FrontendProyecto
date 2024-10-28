@@ -11,17 +11,18 @@
 <table id="asientosTable">
     <thead>
         <tr>
-            <th>ID</th>
+            <th id="ID">ID</th>
             <th>Tipo</th>
             <th>Descripción</th>
             <th>Monto</th>
-            <th>Fecha</th>
+            <th id="Fecha">Fecha</th>
         </tr>
     </thead>
     <tbody>
         <!-- Los datos se insertarán aquí dinámicamente -->
     </tbody>
 </table>
+</body>
 
 <script>
     fetch('/asientos/listar')
