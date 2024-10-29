@@ -19,7 +19,8 @@
         <label for="monto">Monto Total:</label>
         <input type="number" id="monto" name="monto" readonly required>
 
-       
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
         <!-- Nuevos campos para el destinatario -->
         <label for="nombreDestinatario">Nombre del destinatario:</label>
@@ -141,7 +142,7 @@
         localStorage.removeItem("carrito");
         alert("Compra registrada exitosamente.");
         window.location.reload();
-    }
+    }                                                
         
     </script>
 
