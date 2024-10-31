@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +6,8 @@
     <title>Gastos Registrados</title>
     <link rel="stylesheet" href="./Css/grillaDeGastos.css">
 </head>
-<body>
 <h2>Gastos Registrados</h2>
-
-<div class = "table-container">
-
-    <table id="gastosTable">
+<table id="gastosTable">
     <thead>
         <tr>
             <th>ID</th>
@@ -24,23 +20,29 @@
         <!-- Los datos se insertarán aquí dinámicamente -->
     </tbody>
 </table>
-</div>
 
-<script>
-    fetch('/gastos/listar')
-        .then(response => response.json())
-        .then(data => {
+    <script>
+        // Función para cargar gastos desde localStorage
+        function cargarGastos() {
             const tableBody = document.querySelector("#gastosTable tbody");
-            data.forEach(gasto => {
+            tableBody.innerHTML = ""; // Limpiar la tabla antes de cargar
+
+            // Obtener la lista de gastos desde localStorage
+            const gastos = JSON.parse(localStorage.getItem("gastos")) || [];
+
+            // Insertar cada gasto en la tabla
+            gastos.forEach((gasto, index) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td>${gasto.id}</td>
+                    <td>${index + 1}</td>
                     <td>${gasto.descripcion}</td>
                     <td>${gasto.monto}</td>
                     <td>${gasto.fecha}</td>
+                    <td>${gasto.nombreDestinatario}</td>
+                    <td>${gasto.telefono}</td>
+                    <td>${gasto.direccion}</td>
                 `;
                 tableBody.appendChild(row);
             });
         });
 </script>
-</body>

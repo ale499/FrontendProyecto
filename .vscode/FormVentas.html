@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="./Css/formVentas.css">
 </head>
 <body>
-<form action="/ventas/registrar" method="post">
-    <label for="descripcion">Descripción:</label>
-    <input type="text" id="descripcion" name="descripcion" required>
 
-    <label for="monto">Monto:</label>
-    <input type="number" id="monto" name="monto" required>
+    <!-- Botón de Menú -->
+    <button class="menu-btn" onclick="window.location.href='index.html'">Menú</button>
+    <h1>Carrito de Compras</h1>
+    <div id="carrito"></div>
 
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" name="fecha" required>
+    <!-- Formulario de ventas -->
+    <form>
+    
+        <label for="monto">Monto Total:</label>
+        <input type="number" id="monto" name="monto" readonly required>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
     <button type="submit">Registrar Venta</button>
 </form>
-</body>

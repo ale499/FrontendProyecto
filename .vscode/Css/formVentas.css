@@ -47,3 +47,18 @@ button:hover {
     }
     
 }
+
+.menu-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.menu-btn:hover {
+    background-color: #0056b3;
+}
