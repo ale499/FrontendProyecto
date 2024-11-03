@@ -9,7 +9,17 @@ body {
     margin: 0;
 }
 
+.container_login {
+    
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+
+}
+
+
 h2 {
+    margin-bottom: 20px;
     text-align: center;
     color: #d81b60;
 }

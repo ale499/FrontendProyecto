@@ -1,29 +1,35 @@
 /* Estilos Generales */
-body {
+* {
     font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
-    background-color: #f4f4f9;
+    padding: 0;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
-}
 
-#registro-form {
+#registro-form{
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 60%;
+    margin-top: 5rem;
+    margin-left: 19rem;
+}
+
+/* Header */
+
+#header_container {
+   
+    background-color: #306cac;   
+    width: 100vw;
+    height: 8vh;
+   
+}
+#titulo{
+    text-align: center;
 }
 
 /* Estilos de los Labels y Inputs */
@@ -32,13 +38,22 @@ label {
     font-weight: bold;
 }
 
+
+.Registro_container,
 input[type="text"],
 input[type="password"] {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
-    width: 100%;
+    width: 97%;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+
+    border-color: #527eac;
+
 }
 
 button {
@@ -49,10 +64,17 @@ button {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+body{
+
+    background-color: #92b9e2;
+
 }
 
 /* Media Query para Responsividad */
