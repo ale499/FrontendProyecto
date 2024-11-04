@@ -25,9 +25,7 @@
 .titulo {
 
     display: flex;
-
-    color: #007bff;
-    margin-left: 32rem;
+    margin-left: 40rem;
 
 }
 
@@ -38,7 +36,7 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    margin-left: 18rem;
+    margin-left: 23rem;
 } 
 
 .login-btn, .logout-btn {
@@ -113,6 +111,14 @@ button:hover {
 .comprar {
     margin-top: 20px;
     font-size: 18px;
+}
+
+.imagen_articulo{
+
+    width: 10vw; /* Ajusta el tamaño según lo que prefieras */
+    height: 15vh;
+    margin-bottom: 10px;
+
 }
 
 @media (max-width: 600px) {
