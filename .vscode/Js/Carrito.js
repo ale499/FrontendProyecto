@@ -2,27 +2,25 @@
 const usuario = JSON.parse(localStorage.getItem('usuario'));
 
 // Función para agregar un artículo al carrito solo si hay sesión iniciada
-function agregarAlCarrito(nombre, precio, cantidadId) {
-    if (!usuario) {
-        alert("Debe iniciar sesión para agregar productos al carrito.");
-        window.location.href = "registro.html";
+function agregarAlCarrito(producto, precio, cantidadId) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+    if (isLoggedIn !== 'true') {
+        alert("Debes iniciar sesión para agregar productos al carrito.");
         return;
     }
-    
-    const cantidad = parseInt(document.getElementById(cantidadId).value);
+
+    const cantidad = parseInt(document.getElementById(cantidadId).value, 10);
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    const itemIndex = carrito.findIndex(item => item.nombre === nombre);
-    if (itemIndex !== -1) {
-        carrito[itemIndex].cantidad += cantidad;
-    } else {
-        carrito.push({ nombre, precio, cantidad });
-    }
+    // Agrega el producto al carrito
+    carrito.push({ nombre: producto, precio, cantidad });
 
+    // Guarda el carrito actualizado en localStorage
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(`${cantidad} ${nombre}(s) añadido(s) al carrito.`);
-}
 
+    console.log(`Producto agregado: ${producto}, Precio: ${precio}, Cantidad: ${cantidad}`);
+}
 // Función para ir al carrito (formulario de ventas) solo si hay sesión iniciada
 function irAlCarrito() {
     if (!usuario) {
@@ -64,11 +62,12 @@ function registrarVenta() {
     } else {
         alert('Por favor, complete todos los campos');
     }
-
-    function cerrarSesion() {
-        // Aquí puedes limpiar el localStorage o cualquier lógica necesaria
-        localStorage.removeItem('usuario'); // Por ejemplo, si guardas usuario en localStorage
-        window.location.href = 'index.html'; // Redirige a la página principal
-    }
 }
+
+function cerrarSesion() {
+    // Aquí puedes limpiar el localStorage o cualquier lógica necesaria
+    localStorage.removeItem('usuario'); // Por ejemplo, si guardas usuario en localStorage
+    window.location.href = 'index.html'; // Redirige a la página principal
+}
+
 
